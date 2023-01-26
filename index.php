@@ -1,5 +1,6 @@
 <?php 
-    include_once './functions/functions.php';
+    session_start();
+    include_once __DIR__ . '/./functions/functions.php';
 
     $characters_list = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z","0","1","2","3","4","5","6","7","8","9",'.',',',':','?','=','-','(',')','"','\'','/','%','@','!'];
     $char_num = ($_GET["characters_num"]) ?? false;
@@ -19,9 +20,9 @@
         <button type="submit">generate password</button>
     </form>
     <?php
-    if($char_num){
-        $psw = generatePassword($characters_list,$char_num);
-        echo "<p> La password generata è: {$psw} </p>";
+    if($char_num != 0){
+        $_SESSION['$psw']  = generatePassword($characters_list,$char_num);
+        header('Location: ./psw.php');
     }
     ?>
     <h3>memory</h3>
