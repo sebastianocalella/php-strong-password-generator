@@ -1,4 +1,6 @@
 <?php 
+    include_once './functions/functions.php';
+
     $characters_list = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z","0","1","2","3","4","5","6","7","8","9",'.',',',':','?','=','-','(',')','"','\'','/','%','@','!'];
     $char_num = ($_GET["characters_num"]) ?? false;
 ?>
@@ -17,17 +19,10 @@
         <button type="submit">generate password</button>
     </form>
     <?php
-        function generatePassword($array,$psw_len){
-            /*$psw = implode("",array_rand(array_flip($array),$psw_len));
-            return $psw;*/
-            $psw_chars = [];
-            for ($i = 0; $i <= $psw_len; $i++){
-                array_push($psw_chars,$array[rand(0,count($array))]);
-            }
-            $psw = implode("",$psw_chars);
-            return $psw;
-        }
-        echo "<p> la password generata è: " . generatePassword($characters_list,$char_num) . "</p>"
+    if($char_num){
+        $psw = generatePassword($characters_list,$char_num);
+        echo "<p> La password generata è: {$psw} </p>";
+    }
     ?>
     <h3>memory</h3>
 </body>
