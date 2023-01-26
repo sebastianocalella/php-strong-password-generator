@@ -18,10 +18,10 @@
     </form>
     <?php
         function generatePassword($array,$psw_len){
-            $psw = implode("",array_rand(array_flip($array),9));
+            $psw = implode("",array_rand(array_flip($array),$psw_len));
             return $psw;
         }
-        var_dump(generatePassword($characters_list,5));
+        var_dump(generatePassword($characters_list,$char_num));
     ?>
     <h3>memory</h3>
 </body>
