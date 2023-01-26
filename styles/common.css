@@ -1,0 +1,44 @@
+body{
+    background-color: #06223a;
+    font-family: 'Roboto Mono', monospace;
+}
+
+input{
+    height: 40px;
+    width: 200px;
+    margin-right: 50px;
+}
+
+button{
+    padding: 18px 30px;
+    border-radius: 40px;
+    border: none;
+}
+button:hover{
+    cursor: pointer;
+}
+
+.container{
+    margin: 250px 15%;
+    background-color: #00000077;
+    padding: 90px 30px;
+    border-radius: 30px;
+}
+
+pre{
+    margin-bottom: 60px;
+    font-size: 1.2rem;
+    color: #75b7f1;
+}
+
+p{
+    margin-left: 60px;
+    font-size: 1.7rem;
+    color: #75b7f1;
+}
+
+span{
+    font-size: 3rem;
+    color: white;
+    vertical-align: middle;
+}
